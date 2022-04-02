@@ -9,19 +9,19 @@ public class IfElseStatementTheme {
         String name2 = "Irina";
 
         if (age > 20) {
-            System.out.println("Adult with age = " + age);
+            System.out.println("Adult human with age = " + age);
         } else {
-            System.out.println("Young with age = " + age);
+            System.out.println("Young human with age = " + age);
         }
 
         if (!male) {
-            System.out.println("woman");
+            System.out.println("Gender: woman");
         }
 
         if (height < 1.80) {
-            System.out.println("short with height = " + height);
+            System.out.println("Average growth = " + height);
         } else {
-            System.out.println("tall with height =" + height);
+            System.out.println("High growth = " + height);
         }
 
         char firstLetterOfName = name1.charAt(0);
@@ -33,69 +33,59 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("Woman not found");
         }
-        System.out.println();
 
         // Finding the maximum and minimum number
-        System.out.println("Finding the maximum and minimum number:");
-        int firstNumber = 47;
-        int secondNumber = 15;
+        System.out.println("\nFinding the maximum and minimum number:");
+        int number1 = 47;
+        int number2 = 15;
 
-        if (firstNumber > secondNumber) {
-            System.out.println("Max number = " + firstNumber + ". Min number = " + secondNumber);
-        } else if (secondNumber > firstNumber) {
-            System.out.println("Max number = " + secondNumber + ". Min number = " + firstNumber);
+        if (number1 > number2) {
+            System.out.println("Max number = " + number1 + ". Min number = " + number2);
+        } else if (number2 > number1) {
+            System.out.println("Max number = " + number2 + ". Min number = " + number1);
         } else {
             System.out.println("The numbers are equal");
         }
-        System.out.println();
 
         // Working with a number
-        System.out.println("Working with a number:");
-        int number = 37;
+        System.out.println("\nWorking with a number:");
+        int srcNumber = 37;
 
-        if (number % 2 == 0) {
-            System.out.println("Number is even = " + number);
-        } else if (number % 2 != 0) {
-            System.out.println("Number is odd = " + number);
+        if (srcNumber % 2 == 0) {
+            System.out.println("Number is even = " + srcNumber);
+        } else {
+            System.out.println("Number is odd = " + srcNumber);
         }
 
-        if (number > 0) {
-            System.out.println("Number is positive = " + number);
-        } else if (number < 0) {
-            System.out.println("Number is negative" + number);
+        if (srcNumber > 0) {
+            System.out.println("Number is positive = " + srcNumber);
+        } else if (srcNumber < 0) {
+            System.out.println("Number is negative" + srcNumber);
+        } else {
+            System.out.println("Number is null = " + srcNumber);
         }
-
-        if (number == 0) {
-            System.out.println("Number is null = " + number);
-        }
-        System.out.println();
 
         // Finding a common digit in numbers
-        System.out.println("Finding a common digit in numbers:");
-        int commonNumberOne = 348;
-        int commonNumberTwo = 143;
-        String stringNUmberOne = String.valueOf(commonNumberOne);
-        String stringNUmberTwo = String.valueOf(commonNumberTwo);
-        char charNumberOne1 = stringNUmberOne.charAt(0);
-        char charNumberOne2 = stringNUmberOne.charAt(1);
-        char charNumberOne3 = stringNUmberOne.charAt(2);
-        char charNumberTwo1 = stringNUmberTwo.charAt(0);
-        char charNumberTwo2 = stringNUmberTwo.charAt(1);
-        char charNumberTwo3 = stringNUmberTwo.charAt(2);
+        System.out.println("\nFinding a common digit in numbers:");
+        int numberCompare1 = 348;
+        int numberCompare2 = 343;
+        System.out.println("Same digits in numbers " + numberCompare1 + " and " + numberCompare2 + ":");
 
-        if (charNumberOne1 == charNumberTwo1) {
-            System.out.println("Same digits of " + commonNumberOne + " and " + commonNumberTwo + " = " + charNumberOne1);
-        } else if (charNumberOne2 == charNumberTwo2) {
-            System.out.println("Same digits of " + commonNumberOne + " and " + commonNumberTwo + " = " + charNumberOne2);
-        } else if (charNumberOne3 == charNumberTwo3) {
-            System.out.println("Same digits of " + commonNumberOne + " and " + commonNumberTwo + " = " + charNumberOne3);
-        } else {
-            System.out.println("Not found same digits");
+        if (numberCompare1 / 100 == numberCompare2 / 100) {
+            System.out.print(numberCompare1 / 100);
         }
-        System.out.println();
+
+        if (numberCompare1 / 10 % 10 == numberCompare2 / 10 % 10) {
+            System.out.print(numberCompare1 / 10 % 10);
+        }
+
+        if (numberCompare1 % 10 == numberCompare2 % 10) {
+            System.out.print(numberCompare1 % 10);
+        }
+
 
         // Determining a letter, number or symbol by their code
-        System.out.println("Determining a letter, number or symbol by their code:");
+        System.out.println("\n" + "\nDetermining a letter, number or symbol by their code:");
         char ch1 = '\u005A';
 
         if (ch1 >= '0' && ch1 <= 9) {
@@ -107,83 +97,114 @@ public class IfElseStatementTheme {
         } else {
             System.out.println(ch1 + " is not a letter or a number");
         }
-        System.out.println();
 
         // Determining the amount of the deposit and the % accrued by the bank
-        System.out.println("Determining the amount of the deposit and the % accrued by the bank:");
-        int amountOfDeposit = 300_000;
-        float interest = 0;
+        System.out.println("\nDetermining the amount of the deposit and the % accrued by the bank:");
+        int deposit = 300_000;
+        int interest = 0;
 
-        if (amountOfDeposit < 100_000) {
-            interest = amountOfDeposit * 0.05f;
-        } else if (amountOfDeposit >= 100_000 && amountOfDeposit <= 300_000) {
-            interest = amountOfDeposit * 0.07f;
-        } else if (amountOfDeposit > 300_000) {
-            interest = amountOfDeposit * 0.1f;
+        if (deposit < 100_000) {
+            interest = deposit * 5 / 100;
+        } else if (deposit >= 100_000 && deposit <= 300_000) {
+            interest = deposit * 7 / 100;
+        } else if (deposit > 300_000) {
+            interest = deposit * 10 / 100;
         }
-
-        int sumAmountOfDepositWithInterest = amountOfDeposit + (int) interest;
-        System.out.println("Amount of deposit  = " + amountOfDeposit + ", interest = " + interest + ",total amount " +
-                "with interest = " + sumAmountOfDepositWithInterest);
-        System.out.println();
+        System.out.println("Amount of deposit  = " + deposit + ", interest = " + interest + ",total amount " +
+                "with interest = " + (deposit + interest));
 
         // Determination of grade in subjects
-        System.out.println("Determination of grade in subjects:");
+        System.out.println("\nDetermination of grade in subjects:");
         int grade = 100;
-        int historyPercentage = grade * 59 / 100;
-        int programmingPercentage = grade * 91 / 100;
-        int historyGrade = 0;
-        int programmingGrade = 0;
+        int historyPercent = grade * 59 / 100;
+        int csPercent = grade * 91 / 100;
+        int historyScore = 0;
+        int csScore = 0;
 
-        if (historyPercentage > grade * 0.91) {
-            historyGrade = 5;
-        } else if (historyPercentage > grade * 0.73) {
-            historyGrade = 4;
-        } else if (historyPercentage > grade * 0.60) {
-            historyGrade = 3;
-        } else if (historyPercentage <= grade * 0.60) {
-            historyGrade = 2;
+        if (historyPercent > grade * 91 / 100) {
+            historyScore = 5;
+        } else if (historyPercent > grade * 73 / 100) {
+            historyScore = 4;
+        } else if (historyPercent > grade * 60 / 100) {
+            historyScore = 3;
+        } else if (historyPercent <= grade * 60 / 100) {
+            historyScore = 2;
         }
 
-        if (programmingPercentage > grade * 0.91) {
-            programmingGrade = 5;
-        } else if (programmingPercentage > grade * 0.73) {
-            programmingGrade = 4;
-        } else if (programmingPercentage > grade * 0.60) {
-            programmingGrade = 3;
-        } else if (programmingPercentage <= grade * 0.60) {
-            programmingGrade = 2;
+        if (csPercent > grade * 91 / 100) {
+            csScore = 5;
+        } else if (csPercent > grade * 73 / 100) {
+            csScore = 4;
+        } else if (csPercent > grade * 60 / 100) {
+            csScore = 3;
+        } else if (csPercent <= grade * 60 / 100) {
+            csScore = 2;
         }
 
-        float averageGrade = (historyGrade + programmingGrade) / 2;
-        float averagePercentage = (historyPercentage + programmingPercentage) / 2;
-
-        System.out.println(historyGrade + " history");
-        System.out.println(programmingGrade + " programming");
-        System.out.println("Average grade = " + averageGrade);
-        System.out.println("Average percentage = " + averagePercentage);
-        System.out.println();
+        System.out.println("History: " + historyScore + "; CS: " + csScore);
+        System.out.println("Average grade: " + (historyScore + csScore) / 2);
+        System.out.println("Average percent: " + (historyPercent + csPercent) / 2 + "%");
 
         // Calculation of profit (loss)
-        System.out.println("Calculation of profit (loss):");
-        int priceOfRent = 5_000;
-        int saleOfGoods = 15_000;
-        int priceOfGoods = 9_000;
-        int priceOfRentInYear = priceOfRent * 12;
-        int saleOfGoodsInYear = saleOfGoods * 12;
-        int priceOfGoodsInYear = priceOfGoods * 12;
-        char plus = 43;
-        int profit = 0;
-        int loss = 0;
+        System.out.println("\nCalculation of profit (loss):");
+        int rent = 5_000;
+        int sales = 15_000;
+        int purchase = 9_000;
+        int months = 12;
 
-        if (saleOfGoodsInYear > priceOfRentInYear + priceOfGoodsInYear) {
-            profit = saleOfGoodsInYear - (priceOfRentInYear + priceOfGoodsInYear);
-            System.out.println("Profit in one year = " + plus + profit);
-        } else if (saleOfGoodsInYear < priceOfRentInYear + priceOfGoodsInYear) {
-            loss = (priceOfRentInYear + priceOfGoodsInYear) - saleOfGoodsInYear;
-            System.out.println("Loss in one year = " + loss);
+        if (sales * months > (rent * months) + (purchase * months)) {
+            System.out.println("Profit in one year = " + "+" + (sales * months - ((rent * months) + (purchase * months))));
+        } else if (sales * months < (rent * months) + (purchase * months)) {
+            System.out.println("Loss in one year = " + ((rent * months) + (purchase * months) - (sales * months)));
         }
 
-        System.out.println();
+        // Determining the existence of a triangle
+        System.out.println("\nDetermining the existence of a triangle:");
+        int sideA = 3;
+        int sideB = 4;
+        int sideC = 5;
+
+        if (sideA < sideB + sideC || sideB < sideA + sideC || sideC < sideA + sideB) {
+            System.out.println("Triangle exist");
+        } else {
+            System.out.println("Triangle doesn't exist");
+        }
+
+        if (sideA * sideA == (sideB * sideB) + (sideC * sideC)) {
+            System.out.println("SideA is hypotenuse, sideB and sideC is legs");
+            System.out.println("S = " + (sideB * sideC) / 2);
+        } else if (sideB * sideB == (sideA * sideA) + (sideC * sideC)) {
+            System.out.println("sideB is hypotenuse, sideA and sideC is legs");
+            System.out.println("S = " + (sideA * sideC) / 2);
+        } else if (sideC * sideC == (sideA * sideA) + (sideB * sideB)) {
+            System.out.println("sideC is hypotenuse, sideA and sideB is legs");
+            System.out.println("S = " + (sideA * sideB) / 2);
+        }
+        System.out.println("|" + "\\");
+        System.out.println("|" + " " + "\\");
+        System.out.println("|" + " " + " " + "\\");
+        System.out.println("|" + "_" + "_" + "_" + "\\");
+
+        // Counting the number of banknotes
+        System.out.println("\nCounting the number of banknotes:");
+        deposit = 567;
+        int bills = 50;
+
+        if (bills == 50) {
+            int fifties = deposit / 50;
+            int tenners = deposit % 50 / 10;
+            int ones = deposit % 10;
+            System.out.println("Fifties = 50, tenners = 10, ones = 1");
+            System.out.println("We have " + fifties + " fifties and " + tenners + " tenners and " + ones + " ones." );
+            System.out.println("Reverse calculation of the initial amount: " + ((fifties * 50) + (tenners * 10) + (ones * 1)));
+        } else if (bills == 10) {
+            int tenners = deposit / 10;
+            int ones = deposit % 10;
+            System.out.println("Tenners = 10, ones = 1");
+            System.out.println("We have " + tenners + " tenners and " + ones + " ones.");
+            System.out.println("Reverse calculation of the initial amount: " + ((tenners * 10) + (ones * 1)));
+        } else if (bills == 1) {
+            System.out.println("We have " + deposit + "ones");
+        }
     }
 }

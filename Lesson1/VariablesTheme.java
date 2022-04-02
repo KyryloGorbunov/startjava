@@ -18,8 +18,9 @@ public class VariablesTheme {
         System.out.println("\nCalculation of the cost of goods with a discount:");
         int price1 = 100;
         int price2 = 200;
-        System.out.println("Discount amount = " + ((price1 + price2) * 11 / 100));
-        System.out.println("Sum of price with discount = " + (price1 + price2 - ((price1 + price2) * 11 / 100)));
+        int discount = (price1 + price2) * 11 / 100;
+        System.out.println("Discount amount = " + discount);
+        System.out.println("Sum of price with discount = " + (price1 + price2 - discount));
 
         // Output to the console word JAVA
         System.out.println("\nOutput to the console word JAVA:");
@@ -73,26 +74,25 @@ public class VariablesTheme {
 
         // Duke's ASCII art console output
         System.out.println("\nDuke's ASCII art console output:");
-        char symbolSpace = ' ';
-        char symbolSlash = '/';
-        char symbolBackSlash = '\\';
-        char symbolUnderscore = '_';
-        char symbolLeftParentheses = '(';
-        char symbolRightParentheses = ')';
-        System.out.println("" + symbolSpace + symbolSpace + symbolSpace + symbolSpace + symbolSlash + symbolBackSlash);
-        System.out.println("" + symbolSpace + symbolSpace + symbolSpace + symbolSlash + symbolSpace + symbolSpace + symbolBackSlash);
-        System.out.println("" + symbolSpace + symbolSpace + symbolSlash + symbolUnderscore + symbolLeftParentheses + symbolSpace + symbolRightParentheses + symbolBackSlash);
-        System.out.println("" + symbolSpace + symbolSlash + symbolSpace + symbolSpace + symbolSpace + symbolSpace + symbolSpace + symbolSpace + symbolBackSlash);
-        System.out.println("" + symbolSlash + symbolUnderscore + symbolUnderscore + symbolUnderscore + symbolUnderscore + symbolSlash + symbolBackSlash
-                + symbolUnderscore + symbolUnderscore + symbolBackSlash);
+        char space = ' ';
+        char slash = '/';
+        char backSlash = '\\';
+        char underscore = '_';
+        char leftParentheses = '(';
+        char rightParentheses = ')';
+        System.out.println("" + space + space + space + space + slash + backSlash);
+        System.out.println("" + space + space + space + slash + space + space + backSlash);
+        System.out.println("" + space + space + slash + underscore + leftParentheses + space + rightParentheses + backSlash);
+        System.out.println("" + space + slash + space + space + space + space + space + space + backSlash);
+        System.out.println("" + slash + underscore + underscore + underscore + underscore + slash + backSlash + underscore + underscore + backSlash);
 
         // Displaying the number of hundreds, tens and units of a number
         System.out.println("\nDisplaying the number of hundreds, tens and units of a number:");
-        int numberToDivide = 123;
-        System.out.println(numberToDivide + " Number for divide.");
-        System.out.println(numberToDivide / 100 + " hundred. Divide by 100 to get hundreds.");
-        System.out.println(numberToDivide / 10 % 10 + " tens. For find number of tens: divide by 10 and modulo divide by 10.");
-        System.out.println(numberToDivide % 10 + " units. For find number of units: modulo divide by 10.");
+        srcNumber = 123;
+        System.out.println(srcNumber + " Number for divide.");
+        System.out.println(srcNumber / 100 + " hundred. Divide by 100 to get hundreds.");
+        System.out.println(srcNumber / 10 % 10 + " tens. For find number of tens: divide by 10 and modulo divide by 10.");
+        System.out.println(srcNumber % 10 + " units. For find number of units: modulo divide by 10.");
 
         // Seconds conversion
         System.out.println("\nSeconds conversion:");
