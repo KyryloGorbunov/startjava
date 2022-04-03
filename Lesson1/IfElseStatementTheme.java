@@ -3,10 +3,6 @@ public class IfElseStatementTheme {
         // Translation of pseudocode into Java language
         System.out.println("Translation of pseudocode into Java language:");
         int age = 30;
-        boolean male = false;
-        float height = 1.83f;
-        String name1 = "Maria";
-        String name2 = "Irina";
 
         if (age > 20) {
             System.out.println("Adult human with age = " + age);
@@ -14,9 +10,13 @@ public class IfElseStatementTheme {
             System.out.println("Young human with age = " + age);
         }
 
+        boolean male = false;
+
         if (!male) {
             System.out.println("Gender: woman");
         }
+
+        float height = 1.83f;
 
         if (height < 1.80) {
             System.out.println("Average growth = " + height);
@@ -24,6 +24,8 @@ public class IfElseStatementTheme {
             System.out.println("High growth = " + height);
         }
 
+        String name1 = "Maria";
+        String name2 = "Irina";
         char firstLetterOfName = name1.charAt(0);
 
         if (firstLetterOfName == 'M') {
@@ -50,39 +52,39 @@ public class IfElseStatementTheme {
         // Working with a number
         System.out.println("\nWorking with a number:");
         int srcNumber = 37;
+        System.out.println(srcNumber);
 
         if (srcNumber % 2 == 0) {
-            System.out.println("Number is even = " + srcNumber);
+            System.out.println("Number is even");
         } else {
-            System.out.println("Number is odd = " + srcNumber);
+            System.out.println("Number is odd");
         }
 
         if (srcNumber > 0) {
-            System.out.println("Number is positive = " + srcNumber);
+            System.out.println("Number is positive");
         } else if (srcNumber < 0) {
-            System.out.println("Number is negative" + srcNumber);
+            System.out.println("Number is negative");
         } else {
-            System.out.println("Number is null = " + srcNumber);
+            System.out.println("Number is zero");
         }
 
         // Finding a common digit in numbers
         System.out.println("\nFinding a common digit in numbers:");
-        int numberCompare1 = 348;
-        int numberCompare2 = 343;
-        System.out.println("Same digits in numbers " + numberCompare1 + " and " + numberCompare2 + ":");
+        number1 = 348;
+        number2 = 343;
+        System.out.println("Same digits in numbers " + number1 + " and " + number2 + ":");
 
-        if (numberCompare1 / 100 == numberCompare2 / 100) {
-            System.out.print(numberCompare1 / 100);
+        if (number1 / 100 == number2 / 100) {
+            System.out.print(number1 / 100);
         }
 
-        if (numberCompare1 / 10 % 10 == numberCompare2 / 10 % 10) {
-            System.out.print(numberCompare1 / 10 % 10);
+        if (number1 / 10 % 10 == number2 / 10 % 10) {
+            System.out.print(number1 / 10 % 10);
         }
 
-        if (numberCompare1 % 10 == numberCompare2 % 10) {
-            System.out.print(numberCompare1 % 10);
+        if (number1 % 10 == number2 % 10) {
+            System.out.print(number1 % 10);
         }
-
 
         // Determining a letter, number or symbol by their code
         System.out.println("\n" + "\nDetermining a letter, number or symbol by their code:");
@@ -115,29 +117,28 @@ public class IfElseStatementTheme {
 
         // Determination of grade in subjects
         System.out.println("\nDetermination of grade in subjects:");
-        int grade = 100;
-        int historyPercent = grade * 59 / 100;
-        int csPercent = grade * 91 / 100;
-        int historyScore = 0;
-        int csScore = 0;
+        int historyPercent = 59;
+        int csPercent = 91;
+        int historyScore;
+        int csScore;
 
-        if (historyPercent > grade * 91 / 100) {
+        if (historyPercent > 91) {
             historyScore = 5;
-        } else if (historyPercent > grade * 73 / 100) {
+        } else if (historyPercent > 73) {
             historyScore = 4;
-        } else if (historyPercent > grade * 60 / 100) {
+        } else if (historyPercent > 60) {
             historyScore = 3;
-        } else if (historyPercent <= grade * 60 / 100) {
+        } else {
             historyScore = 2;
         }
 
-        if (csPercent > grade * 91 / 100) {
+        if (csPercent > 91) {
             csScore = 5;
-        } else if (csPercent > grade * 73 / 100) {
+        } else if (csPercent > 73) {
             csScore = 4;
-        } else if (csPercent > grade * 60 / 100) {
+        } else if (csPercent > 60) {
             csScore = 3;
-        } else if (csPercent <= grade * 60 / 100) {
+        } else {
             csScore = 2;
         }
 
@@ -150,12 +151,13 @@ public class IfElseStatementTheme {
         int rent = 5_000;
         int sales = 15_000;
         int purchase = 9_000;
-        int months = 12;
+        int profit = sales * 12;
+        int costs = (rent + purchase) * 12;
 
-        if (sales * months > (rent * months) + (purchase * months)) {
-            System.out.println("Profit in one year = " + "+" + (sales * months - ((rent * months) + (purchase * months))));
-        } else if (sales * months < (rent * months) + (purchase * months)) {
-            System.out.println("Loss in one year = " + ((rent * months) + (purchase * months) - (sales * months)));
+        if (profit > costs) {
+            System.out.println("Profit in one year = " + "+" + (profit - costs));
+        } else if (profit < costs) {
+            System.out.println("Loss in one year = " + (costs - profit));
         }
 
         // Determining the existence of a triangle
@@ -163,23 +165,31 @@ public class IfElseStatementTheme {
         int sideA = 3;
         int sideB = 4;
         int sideC = 5;
-
-        if (sideA < sideB + sideC || sideB < sideA + sideC || sideC < sideA + sideB) {
+        
+        if (sideA < sideB + sideC && sideB < sideA + sideC && sideC < sideA + sideB) {
             System.out.println("Triangle exist");
+            int leg1 = 0;
+            int leg2 = 0;
+
+            if (sideA * sideA == (sideB * sideB) + (sideC * sideC)) {
+                System.out.println("sideA is hypotenuse, sideB and sideC is legs");
+                leg1 = sideB;
+                leg2 = sideC;
+            } else if (sideB * sideB == (sideA * sideA) + (sideC * sideC)) {
+                System.out.println("sideB is hypotenuse, sideA and sideC is legs");
+                leg1 = sideA;
+                leg2 = sideC;
+            } else if (sideC * sideC == (sideA * sideA) + (sideB * sideB)) {
+                System.out.println("sideC is hypotenuse, sideA and sideB is legs");
+                leg1 = sideA;
+                leg2 = sideB;
+            }
+            System.out.println("S = " + (leg1 * leg2) / 2);
+
         } else {
             System.out.println("Triangle doesn't exist");
         }
 
-        if (sideA * sideA == (sideB * sideB) + (sideC * sideC)) {
-            System.out.println("SideA is hypotenuse, sideB and sideC is legs");
-            System.out.println("S = " + (sideB * sideC) / 2);
-        } else if (sideB * sideB == (sideA * sideA) + (sideC * sideC)) {
-            System.out.println("sideB is hypotenuse, sideA and sideC is legs");
-            System.out.println("S = " + (sideA * sideC) / 2);
-        } else if (sideC * sideC == (sideA * sideA) + (sideB * sideB)) {
-            System.out.println("sideC is hypotenuse, sideA and sideB is legs");
-            System.out.println("S = " + (sideA * sideB) / 2);
-        }
         System.out.println("|" + "\\");
         System.out.println("|" + " " + "\\");
         System.out.println("|" + " " + " " + "\\");
@@ -188,23 +198,19 @@ public class IfElseStatementTheme {
         // Counting the number of banknotes
         System.out.println("\nCounting the number of banknotes:");
         deposit = 567;
-        int bills = 50;
 
-        if (bills == 50) {
+        if (deposit > 0) {
             int fifties = deposit / 50;
             int tenners = deposit % 50 / 10;
             int ones = deposit % 10;
             System.out.println("Fifties = 50, tenners = 10, ones = 1");
-            System.out.println("We have " + fifties + " fifties and " + tenners + " tenners and " + ones + " ones." );
-            System.out.println("Reverse calculation of the initial amount: " + ((fifties * 50) + (tenners * 10) + (ones * 1)));
-        } else if (bills == 10) {
-            int tenners = deposit / 10;
-            int ones = deposit % 10;
-            System.out.println("Tenners = 10, ones = 1");
-            System.out.println("We have " + tenners + " tenners and " + ones + " ones.");
-            System.out.println("Reverse calculation of the initial amount: " + ((tenners * 10) + (ones * 1)));
-        } else if (bills == 1) {
-            System.out.println("We have " + deposit + "ones");
+            System.out.println("We have " + fifties + " fifties and " + tenners + " tenners and " + ones + " ones.");
+            fifties *= 50;
+            tenners *= 10;
+            ones *=1;
+            System.out.println("Reverse calculation of the initial amount: " + (fifties + tenners + ones));
+        } else {
+            System.out.println("Deposit is 0");
         }
     }
 }
