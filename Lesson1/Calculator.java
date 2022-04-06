@@ -1,47 +1,39 @@
 public class Calculator {
     public static void main(String[] args) {
-        int a = (int)(Math.random() * 100);
-        int b = (int)(Math.random() * 100);
-        float result = 0;
-        char sign = '+';
-        char signPlus = '+';
-        char signMinus = '-';
-        char signMultiplication = '*';
-        char signDivision = '/';
-        char signModuloDivision = '%';
+        int a = (int) (Math.random() * 100);
+        int b = (int) (Math.random() * 100);
+        char sign = '^';
+        char plus = '+';
+        char minus = '-';
+        char multiplication = '*';
+        char division = '/';
+        char moduloDivision = '%';
         char signExponentiationA = '^';
-        char singExponentiationB = '~';
         int exponentiation = 3;
-        int exponentiationA = 1;
-        int exponentiationB = 1;
 
-        for (int i = 0; i < exponentiation; i++) {
-            exponentiationA = (exponentiationA * a);
-        }
-
-        for (int i = 0; i < exponentiation; i++) {
-            exponentiationB = (exponentiationB * b);
-        }
-
-        if (sign == signPlus) {
-            result = a + b;
-        } else if (sign == signMinus) {
-            result = a - b;
-        } else if (sign == signMultiplication) {
-            result = a * b;
-        } else if (sign == signDivision) {
-            result = a / b;
-        } else if (sign == signModuloDivision) {
-            result = a % b;
+        if (sign == plus) {
+            int result = a + b;
+            System.out.println(a + " " + sign + " " + b + " = " + result);
+        } else if (sign == minus) {
+            int result = a - b;
+            System.out.println(a + " " + sign + " " + b + " = " + result);
+        } else if (sign == multiplication) {
+            int result = (a * b);
+            System.out.println(a + " " + sign + " " + b + " = " + result);
+        } else if (sign == division) {
+            float result = (float) a / (float) b;
+            System.out.println(a + " " + sign + " " + b + " = " + result);
+        } else if (sign == moduloDivision) {
+            int result = a % b;
+            System.out.println(a + " " + sign + " " + b + " = " + result);
         } else if (sign == signExponentiationA) {
-            result = exponentiationA;
-        } else if (sign == singExponentiationB) {
-            result = exponentiationB;
+            int result = 1;
+            for (int i = 0; i < exponentiation; i++) {
+                result *= a;
+            }
+            System.out.println(a + " " + sign + exponentiation + " = " + result);
         } else {
             System.out.println("Invalid operation entered");
         }
-        System.out.println(a + " " + sign + " " + b + " = " + result);
-        // System.out.println(a + " " + sign + exponentiation + " = " + result); //Exponentiation of the number A
-        // System.out.println(b + " " + sign + exponentiation + " = " + result); //Exponentiation of the number B
     }
 }

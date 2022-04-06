@@ -141,7 +141,6 @@ public class IfElseStatementTheme {
         } else {
             csScore = 2;
         }
-
         System.out.println("History: " + historyScore + "; CS: " + csScore);
         System.out.println("Average grade: " + (historyScore + csScore) / 2);
         System.out.println("Average percent: " + (historyPercent + csPercent) / 2 + "%");
@@ -151,13 +150,13 @@ public class IfElseStatementTheme {
         int rent = 5_000;
         int sales = 15_000;
         int purchase = 9_000;
-        int profit = sales * 12;
-        int costs = (rent + purchase) * 12;
+        int profit = sales;
+        int costs = rent + purchase;
 
         if (profit > costs) {
-            System.out.println("Profit in one year = " + "+" + (profit - costs));
+            System.out.println("Profit in one year = " + "+" + (profit - costs) * 12);
         } else if (profit < costs) {
-            System.out.println("Loss in one year = " + (costs - profit));
+            System.out.println("Loss in one year = " + (costs - profit) * 12);
         }
 
         // Determining the existence of a triangle
@@ -166,20 +165,20 @@ public class IfElseStatementTheme {
         int sideB = 4;
         int sideC = 5;
         
-        if (sideA < sideB + sideC && sideB < sideA + sideC && sideC < sideA + sideB) {
+        if (sideA < sideB + sideC || sideB < sideA + sideC || sideC < sideA + sideB) {
             System.out.println("Triangle exist");
             int leg1 = 0;
             int leg2 = 0;
 
-            if (sideA * sideA == (sideB * sideB) + (sideC * sideC)) {
+            if (sideA > sideB && sideA > sideC) {
                 System.out.println("sideA is hypotenuse, sideB and sideC is legs");
                 leg1 = sideB;
                 leg2 = sideC;
-            } else if (sideB * sideB == (sideA * sideA) + (sideC * sideC)) {
+            } else if (sideB > sideA && sideB > sideC) {
                 System.out.println("sideB is hypotenuse, sideA and sideC is legs");
-                leg1 = sideA;
+                leg1 = sideB;
                 leg2 = sideC;
-            } else if (sideC * sideC == (sideA * sideA) + (sideB * sideB)) {
+            } else if (sideC > sideA && sideC > sideB) {
                 System.out.println("sideC is hypotenuse, sideA and sideB is legs");
                 leg1 = sideA;
                 leg2 = sideB;
@@ -189,7 +188,6 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("Triangle doesn't exist");
         }
-
         System.out.println("|" + "\\");
         System.out.println("|" + " " + "\\");
         System.out.println("|" + " " + " " + "\\");
