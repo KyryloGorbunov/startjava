@@ -2,21 +2,20 @@ public class CyclesTheme {
     public static void main(String[] args) {
         // Calculating the sum of even and odd numbers
         System.out.println("Calculating the sum of even and odd numbers:");
-        int number = -11;
-        int sumEvenNumbers = 0;
-        int sumOddNumbers = 0;
+        int counter = -10;
+        int sumEven = 0;
+        int sumOdd = 0;
 
         do {
-            number++;
-            if (number % 2 == 0) {
-                sumEvenNumbers += number;
+            if (counter % 2 == 0) {
+                sumEven += counter;
             } else {
-                sumOddNumbers += number;
+                sumOdd += counter;
             }
-        } while (number < 21);
-
-        System.out.println("Sum of even number = " + sumEvenNumbers);
-        System.out.println("Sum of even odd = " + sumOddNumbers);
+            counter++;
+        } while (counter <= 21);
+        System.out.println("Sum of even number = " + sumEven);
+        System.out.println("Sum of even odd = " + sumOdd);
 
         // Printing numbers between max and min
         System.out.println("\nPrinting numbers between max and min:");
@@ -44,8 +43,7 @@ public class CyclesTheme {
         }
         System.out.println("Min numbers is " + min + ". Max number is " + max);
         System.out.println("All numbers between max and min:");
-
-        for (int i = min; i <= max; i++) {
+        for (int i = --max; i > min; i--) {
             System.out.print(i + " ");
         }
 
@@ -55,24 +53,26 @@ public class CyclesTheme {
         int sum = 0;
 
         while (srcNumber != 0) {
-            number = srcNumber % 10;
-            System.out.print(number);
-            sum += number;
+            counter = srcNumber % 10;
+            System.out.print(counter);
+            sum += counter;
             srcNumber /= 10;
         }
         System.out.println("\nSum of numbers is " + sum);
 
         // Printing numbers to the console in multiple lines
         System.out.println("\nPrinting numbers to the console in multiple lines:");
-        for (int i = 1, j = 1; i <= 24; i += 2, j++) {
+        for (int i = 1, j = 1; i < 24; i += 2, j++) {
             System.out.format("%02d" + " ", i);
             if (j % 5 == 0) {
                 System.out.println();
             }
-        }
-
-        for (int i = 0; i < 3; i++) {
-            System.out.format("%02d" + " ", 0);
+            if (i >= 23 && j % 5 != 0) {
+                while (j % 5 != 0) {
+                    System.out.format("%02d" + " ", 0);
+                    j++;
+                }
+            }
         }
 
         // Checking the number of ones for even parity
@@ -83,10 +83,9 @@ public class CyclesTheme {
             if (srcNumber % 10 == 1) {
                 count++;
             }
-            srcNumber = srcNumber / 10;
+            srcNumber /= 10;
         }
         System.out.println("Numbers of ones is " + count);
-
         if (count % 2 == 0) {
             System.out.println("Sum of ones is even");
         } else {
@@ -104,39 +103,47 @@ public class CyclesTheme {
         System.out.println();
 
         int triangle = 0;
+
         while (triangle < 5) {
-            for (int j = triangle; j < 5; j++) {
+            int j = 5;
+            while (j > triangle) {
                 System.out.print("#");
+                j--;
             }
             System.out.println();
             triangle++;
         }
         System.out.println();
 
-        count = 1;
+        count = 0;
+
         do {
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j <= i; j++) {
-                    System.out.print("$");
-                }
-                System.out.println();
-            }
-            for (int i = 3; i > 0; i--) {
-                for (int j = 2; j <= i; j++) {
-                    System.out.print("$");
-                }
-                System.out.println();
-            }
             count++;
-        } while (count == 1);
+            if (count == 1 || count == 5) {
+                System.out.println("$");
+            } else if (count == 2 || count == 4) {
+                int i = 0;
+                do {
+                    System.out.print("$");
+                    i++;
+                }while (i < 2);
+                System.out.println();
+            } else if (count == 3) {
+                int i = 0;
+                do {
+                    System.out.print("$");
+                    i++;
+                }while (i < 3);
+                System.out.println();
+            }
+        } while (count < 5);
+
 
         // Display ASCII characters
-        System.out.println("Display ASCII characters:");
-        System.out.println("Dec Char" );
+        System.out.println("\nDisplay ASCII characters:");
+        System.out.println("Dec Char");
         for (int i = 0; i <= 127; i++) {
-            char ch1 = (char) i;
-            System.out.printf("%3d ", i);
-            System.out.print("  " + ch1 + "\n");
+            System.out.println(String.format("%3d", i) + "  " + (char) i );
         }
 
         // Checking if a number is a palindrome
@@ -177,7 +184,7 @@ public class CyclesTheme {
 
         // Derivation of the Pythagorean multiplication table
         System.out.println("\nDerivation of the Pythagorean multiplication table:");
-        for(int i = 2; i < 10; i++) {
+        for (int i = 1; i < 10; i++) {
             for (int j = 1; j < 10; j++) {
                 System.out.format("%02d" + " ", (j * i));
             }

@@ -147,16 +147,12 @@ public class IfElseStatementTheme {
 
         // Calculation of profit (loss)
         System.out.println("\nCalculation of profit (loss):");
-        int rent = 5_000;
-        int sales = 15_000;
-        int purchase = 9_000;
-        int profit = sales;
-        int costs = rent + purchase;
+        int profit = (15000 - 5000 - 9000) * 12;
 
-        if (profit > costs) {
-            System.out.println("Profit in one year = " + "+" + (profit - costs) * 12);
-        } else if (profit < costs) {
-            System.out.println("Loss in one year = " + (costs - profit) * 12);
+        if (profit > 0) {
+            System.out.println("Profit in one year = " + "+" + profit);
+        } else if (profit < 0) {
+            System.out.println("Loss in one year = " + profit);
         }
 
         // Determining the existence of a triangle
@@ -184,14 +180,14 @@ public class IfElseStatementTheme {
                 leg2 = sideB;
             }
             System.out.println("S = " + (leg1 * leg2) / 2);
-
+            System.out.println("|" + "\\");
+            System.out.println("|" + " " + "\\");
+            System.out.println("|" + " " + " " + "\\");
+            System.out.println("|" + "_" + "_" + "_" + "\\");
         } else {
             System.out.println("Triangle doesn't exist");
         }
-        System.out.println("|" + "\\");
-        System.out.println("|" + " " + "\\");
-        System.out.println("|" + " " + " " + "\\");
-        System.out.println("|" + "_" + "_" + "_" + "\\");
+        
 
         // Counting the number of banknotes
         System.out.println("\nCounting the number of banknotes:");
