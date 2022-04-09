@@ -62,17 +62,17 @@ public class CyclesTheme {
 
         // Printing numbers to the console in multiple lines
         System.out.println("\nPrinting numbers to the console in multiple lines:");
-        for (int i = 1, j = 1; i < 24; i += 2, j++) {
-            System.out.format("%02d" + " ", i);
-            if (j % 5 == 0) {
+        int number;
+        for (number = 1, counter = 1; number < 24; number += 2, counter++) {
+            System.out.format("%02d" + " ", number);
+            if (counter == 5) {
                 System.out.println();
+                counter = 0;
             }
-            if (i >= 23 && j % 5 != 0) {
-                while (j % 5 != 0) {
-                    System.out.format("%02d" + " ", 0);
-                    j++;
-                }
-            }
+        }
+        while (counter <= 5) {
+            System.out.format("%02d" + " ", 0);
+            counter++;
         }
 
         // Checking the number of ones for even parity
@@ -184,9 +184,14 @@ public class CyclesTheme {
 
         // Derivation of the Pythagorean multiplication table
         System.out.println("\nDerivation of the Pythagorean multiplication table:");
-        for (int i = 1; i < 10; i++) {
+        System.out.print("   ");
+        for (int i = 2; i < 10; i++) {
+            System.out.format("%2d" + " ", i);
+        }
+        System.out.println();
+        for (int i = 2; i < 10; i++) {
             for (int j = 1; j < 10; j++) {
-                System.out.format("%02d" + " ", (j * i));
+                System.out.format("%2d" + " ", (j * i));
             }
             System.out.println();
         }
