@@ -160,26 +160,50 @@ public class CyclesTheme {
         // Determining if a number is lucky
         System.out.println("\nDetermining if a number is lucky:");
         srcNumber = 257914;
-        count = 1;
-        do {
-            System.out.println(srcNumber);
-            number1 = srcNumber / 100000;
-            number2 = (srcNumber / 10000) % 10;
-            number3 = (srcNumber / 1000) % 10 % 10;
-            int number4 = (srcNumber / 100) % 10 % 10 % 10;
-            int number5 = (srcNumber / 10) % 10 % 10 % 10 % 10;
-            int number6 = srcNumber % 10 % 10 % 10 % 10;
-            int sum1 = number1 + number2 + number3;
-            int sum2 = number4 + number5 + number6;
-            System.out.println(number1 + " + " + number2 + " + " + number3 + " = " + sum1);
-            System.out.println(number4 + " + " + number5 + " + " + number6 + " = " + sum2);
-            if (sum1 == sum2) {
-                System.out.println("Number is lucky");
-            } else {
-                System.out.println("Number is unlucky");
+        System.out.println(srcNumber);
+        int digit1 = 0;
+        int digit2 = 0;
+        int digit3 = 0;
+        int digits1 = srcNumber / 1000;
+
+        for (int i = 1; i < 4; i++) {
+            int digit = digits1 % 10;
+            digits1 /= 10;
+            if (i == 1) {
+                digit3 = digit;
+            } else if (i == 2) {
+                digit2 = digit;
+            } else if (i == 3) {
+                digit1 = digit;
             }
-            count++;
-        } while (count == 1);
+        }
+
+        int digit4 = 0;
+        int digit5 = 0;
+        int digit6 = 0;
+        int digits2 = srcNumber % 1000;
+
+        for (int i = 1; i < 4; i++) {
+            int digit = digits2 % 10;
+            digits2 /= 10;
+            if (i == 1) {
+                digit6 = digit;
+            } else if (i == 2) {
+                digit5 = digit;
+            } else if (i == 3) {
+                digit4 = digit;
+            }
+        }
+
+        int sum1 = digit1 + digit2 + digit3;
+        int sum2 = digit4 + digit5 + digit6;
+        System.out.println(digit1 + " + " + digit2 + " + " + digit3 + " = " + sum1);
+        System.out.println(digit4 + " + " + digit5 + " + " + digit6 + " = " + sum2);
+        if (sum1 == sum2) {
+            System.out.println("Number is lucky");
+        } else {
+            System.out.println("Number is unlucky");
+        }
 
         // Derivation of the Pythagorean multiplication table
         System.out.println("\nDerivation of the Pythagorean multiplication table:");
