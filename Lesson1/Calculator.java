@@ -5,26 +5,22 @@ public class Calculator {
         char sign = '^';
         float result = 0;
 
-        if (sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '%' || sign == '^') {
-
-            if (sign == '+') {
-                result = a + b;
-            } else if (sign == '-') {
-                result = a - b;
-            } else if (sign == '*') {
-                result = (a * b);
-            } else if (sign == '/') {
-                result = (float) a / (float) b;
-            } else if (sign == '%') {
-                result = a % b;
-            } else if (sign == '^') {
-                result = 1;
-                for (int i = 0; i < b; i++) {
-                    result *= a;
-                }
+        if (sign == '+') {
+            result = a + b;
+        } else if (sign == '-') {
+            result = a - b;
+        } else if (sign == '*') {
+            result = (a * b);
+        } else if (sign == '/') {
+            result = (float) a / (float) b;
+        } else if (sign == '%') {
+            result = a % b;
+        } else if (sign == '^') {
+            result = 1;
+            for (int i = 0; i < b; i++) {
+                result *= a;
             }
-            System.out.println(a + " " + sign + " " + b + " = " + result);
-        } else
-            System.out.println("Invalid operation entered");
+        }
+        System.out.println(a + " " + sign + " " + b + " = " + result);
     }
 }
