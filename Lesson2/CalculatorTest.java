@@ -4,7 +4,7 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
-        boolean calculate = true;
+        String answer;
         do {
             System.out.println("Enter the first number: ");
             calculator.setA(scanner.nextFloat());
@@ -13,18 +13,11 @@ public class CalculatorTest {
             System.out.println("Enter the second number: ");
             calculator.setB(scanner.nextFloat());
             System.out.println(calculator.getResult());
-            boolean answer = true;
-            while (answer == true) {
-                String string = scanner.nextLine();
-                if (string.equals("yes") == true) {
-                    answer = false;
-                } else if (string.equals("no") == true) {
-                    calculate = false;
-                    answer = false;
-                } else {
-                    System.out.println("Would you like to continue computing? [yes/no]:");
-                }
+            answer = scanner.nextLine();
+            while (answer.equals("yes") == false && answer.equals("no") == false) {
+                System.out.println("Would you like to continue computing? [yes/no]:");
+                answer = scanner.nextLine();
             }
-        } while (calculate == true);
+        } while (answer.equals("no") == false);
     }
 }

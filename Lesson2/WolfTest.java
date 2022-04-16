@@ -6,7 +6,8 @@ public class WolfTest {
         wolf.setWeight(25);
         wolf.setAge(5);
         wolf.setColor("white");
-        System.out.println("Gender: " + wolf.getGender() + "\nNickname: " + wolf.getNickname() + "\nWeight: " + wolf.getWeight() + "\nAge: " + wolf.getAge() + "\nColor: " + wolf.getColor());
+        System.out.println("Gender: " + wolf.getGender() + "\nNickname: " + wolf.getNickname() + 
+            "\nWeight: " + wolf.getWeight() + "\nAge: " + wolf.getAge() + "\nColor: " + wolf.getColor());
         wolf.move();
         wolf.sit();
         wolf.run();
