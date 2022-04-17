@@ -12,12 +12,12 @@ public class CalculatorTest {
             calculator.setSign(scanner.next().charAt(0));
             System.out.println("Enter the second number: ");
             calculator.setB(scanner.nextFloat());
-            System.out.println(calculator.getResult());
+            System.out.println(calculator.calculate());
             answer = scanner.nextLine();
-            while (answer.equals("yes") == false && answer.equals("no") == false) {
+            while (!answer.equals("yes") && !answer.equals("no")) {
                 System.out.println("Would you like to continue computing? [yes/no]:");
                 answer = scanner.nextLine();
             }
-        } while (answer.equals("no") == false);
+        } while (!answer.equals("no"));
     }
 }
