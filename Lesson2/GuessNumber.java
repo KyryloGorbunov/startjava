@@ -11,33 +11,29 @@ public class GuessNumber {
     }
 
     public void start() {
-        int hiddenNumber = (int) (Math.random() * 100);
-        boolean win;
+        int hiddenNumber = (int) (Math.random() * 100 + 1);
         Scanner scanner = new Scanner(System.in);
         do {
-            win = false;
             System.out.println(player1.getName() + " enter the hidden number:");
             player1.setNumber(scanner.nextInt());
             if (player1.getNumber() == hiddenNumber) {
                 System.out.println("Win " + player1.getName() + "\n");
-                win = true;
+                break;
             } else if (player1.getNumber() < hiddenNumber) {
                 System.out.println(player1.getName() + ": This number is less than what the computer guessed\n");
             } else if (player1.getNumber() > hiddenNumber) {
                 System.out.println(player1.getName() + ": This number is greater than what the computer guessed\n");
             }
-            if (!win) {
-                System.out.println(player2.getName() + " enter the hidden number:");
-                player2.setNumber(scanner.nextInt());
-                if (player2.getNumber() == hiddenNumber) {
-                    System.out.println("Win " + player2.getName()+ "\n");
-                    win = true;
-                } else if (player2.getNumber() < hiddenNumber) {
-                    System.out.println(player2.getName() + ": This number is less than what the computer guessed\n");
-                } else if (player2.getNumber() > hiddenNumber) {
-                    System.out.println(player2.getName() + ": This number is greater than what the computer guessed\n");
-                }
+            System.out.println(player2.getName() + " enter the hidden number:");
+            player2.setNumber(scanner.nextInt());
+            if (player2.getNumber() == hiddenNumber) {
+                System.out.println("Win " + player2.getName() + "\n");
+                break;
+            } else if (player2.getNumber() < hiddenNumber) {
+                System.out.println(player2.getName() + ": This number is less than what the computer guessed\n");
+            } else if (player2.getNumber() > hiddenNumber) {
+                System.out.println(player2.getName() + ": This number is greater than what the computer guessed\n");
             }
-        } while (!win);
+        } while (true);
     }
 }
