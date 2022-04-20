@@ -1,3 +1,5 @@
+package com.startjava.lesson1.unicode;
+
 public class CyclesTheme {
     public static void main(String[] args) {
         // Calculating the sum of even and odd numbers

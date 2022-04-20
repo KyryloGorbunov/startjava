@@ -1,3 +1,5 @@
+package com.startjava.lesson1.unicode;
+
 public class VariablesTheme {
     public static void main(String[] args) {
         // Creating Variables and Printing Their Values to the Console

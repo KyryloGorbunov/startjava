@@ -1,3 +1,5 @@
+package com.startjava.lesson2_3.game;
+
 import java.util.Scanner;
 
 public class GuessNumber {
@@ -24,6 +26,7 @@ public class GuessNumber {
             } else if (player1.getNumber() > hiddenNumber) {
                 System.out.println(player1.getName() + ": This number is greater than what the computer guessed\n");
             }
+
             System.out.println(player2.getName() + " enter the hidden number:");
             player2.setNumber(scanner.nextInt());
             if (player2.getNumber() == hiddenNumber) {

@@ -1,3 +1,5 @@
+package com.startjava.lesson1.unicode;
+
 public class IfElseStatementTheme {
     public static void main(String[] args) {
         // Translation of pseudocode into Java language
