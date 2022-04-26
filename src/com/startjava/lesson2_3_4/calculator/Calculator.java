@@ -1,16 +1,16 @@
-package com.startjava.lesson2_3.calculator;
+package com.startjava.lesson2_3_4.calculator;
 
 public class Calculator {
 
-    private float a;
-    private float b;
+    private int a;
+    private int b;
     private char sign;
 
-    public void setA(float a) {
+    public void setA(int a) {
         this.a = a;
     }
 
-    public void setB(float b) {
+    public void setB(int b) {
         this.b = b;
     }
 
@@ -18,24 +18,22 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public float calculate() {
-        float result = 0;
+//  +, -, *, /, ^, %
+    public int calculate() {
+        int result = 0;
         switch (sign) {
             case '+':
                 return a + b;
             case '-':
-                return a - b;
+                return Math.subtractExact(a, b);
             case '*':
-                return a * b;
+                return Math.multiplyExact(a, b);
             case '/':
-                return a / b;
+                return Math.floorDiv(a, b);
             case '%':
                 return a % b;
             case '^':
-                result = 1;
-                for (int i = 0; i < b; i++) {
-                    result *= a;
-                }
+                return (int) Math.pow(a, b);
         }
         return result;
     }
