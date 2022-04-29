@@ -1,40 +1,42 @@
 package com.startjava.lesson2_3_4.calculator;
 
+import java.util.Scanner;
+
 public class Calculator {
 
     private int a;
     private int b;
     private char sign;
 
-    public void setA(int a) {
-        this.a = a;
-    }
-
-    public void setB(int b) {
-        this.b = b;
-    }
-
-    public void setSign(char sign) {
-        this.sign = sign;
-    }
-
 //  +, -, *, /, ^, %
-    public int calculate() {
-        int result = 0;
+    public void calculate() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a mathematical expression: ");
+        String[] expression = scanner.nextLine().split(" ");
+
+        a = Integer.parseInt(expression[0]);
+        sign = expression[1].charAt(0);
+        b = Integer.parseInt(expression[2]);
+
         switch (sign) {
             case '+':
-                return a + b;
+                System.out.println(a + b);
+                break;
             case '-':
-                return Math.subtractExact(a, b);
+            System.out.println(Math.subtractExact(a, b));
+                break;
             case '*':
-                return Math.multiplyExact(a, b);
+            System.out.println(Math.multiplyExact(a, b));
+                break;
             case '/':
-                return Math.floorDiv(a, b);
+            System.out.println(Math.floorDiv(a, b));
+                break;
             case '%':
-                return a % b;
+            System.out.println(a % b);
+                break;
             case '^':
-                return (int) Math.pow(a, b);
+            System.out.println(Math.pow(a, b));
+                break;
         }
-        return result;
     }
 }
