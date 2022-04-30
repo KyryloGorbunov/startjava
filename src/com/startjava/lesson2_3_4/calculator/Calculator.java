@@ -5,34 +5,27 @@ import java.util.Scanner;
 public class Calculator {
 
     //  +, -, *, /, ^, %
-    public void calculate() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a mathematical expression: ");
-        String[] expression = scanner.nextLine().split(" ");
-
+    public int calculate(String mathOperation) {
+        String[] expression = mathOperation.split(" ");
         int a = Integer.parseInt(expression[0]);
         char sign = expression[1].charAt(0);
         int b = Integer.parseInt(expression[2]);
+        int result = 0;
 
         switch (sign) {
             case '+':
-                System.out.println(a + b);
-                break;
+                return a + b;
             case '-':
-                System.out.println(Math.subtractExact(a, b));
-                break;
+                return Math.subtractExact(a, b);
             case '*':
-                System.out.println(Math.multiplyExact(a, b));
-                break;
+                return Math.multiplyExact(a, b);
             case '/':
-                System.out.println(Math.floorDiv(a, b));
-                break;
+                return Math.floorDiv(a, b);
             case '%':
-                System.out.println(a % b);
-                break;
+                return a % b;
             case '^':
-                System.out.println(Math.pow(a, b));
-                break;
+                return (int) Math.pow(a, b);
         }
+        return result;
     }
 }

@@ -15,8 +15,8 @@ public class Player {
         return name;
     }
 
-    public int[] getNumbers() {
-        return Arrays.copyOf(numbers, numbers.length);
+    public int[] getNumbers(int index) {
+        return Arrays.copyOf(numbers, index);
     }
 
     public int getNumber(int index) {

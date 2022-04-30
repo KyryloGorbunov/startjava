@@ -8,13 +8,13 @@ public class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
         String answer;
         do {
-            calculator.calculate();
-
+            System.out.print("Enter a mathematical expression: ");
+            String mathOperation = scanner.nextLine();
+            System.out.println(calculator.calculate(mathOperation));
             do {
                 System.out.println("Would you like to continue computing? [yes/no]:");
                 answer = scanner.nextLine();
             } while (!answer.equals("yes") && !answer.equals("no"));
-
         } while (answer.equals("yes"));
     }
 }
