@@ -7,7 +7,6 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int hiddenNumber;
-    private int count;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -15,10 +14,7 @@ public class GuessNumber {
     }
 
     public void start() {
-        hiddenNumber = (int) (Math.random() * 100 + 1);
-        player1.cleanNumbers(count);
-        player2.cleanNumbers(count);
-        count = 0;
+        initGame();
         System.out.println("Each player has 10 attempts: ");
         for (int i = 0; i < 10; i++) {
             if (isGuessed(player1)) {
@@ -27,41 +23,41 @@ public class GuessNumber {
             if (isGuessed(player2)) {
                 break;
             }
-            count++;
+            Player.count++;
         }
         printNumbers(player1);
-        System.out.println();
         printNumbers(player2);
     }
 
+    public void initGame() {
+        hiddenNumber = (int) (Math.random() * 100 + 1);
+        player1.toIndex();
+        player2.toIndex();
+    }
+
     private boolean isGuessed(Player player) {
-        boolean result = false;
         Scanner scanner = new Scanner(System.in);
         System.out.print(player.getName() + " enter the hidden number: ");
-        player.setNumber(count, scanner.nextInt());
+        player.setNumber(scanner.nextInt());
+        System.out.println(player.getNumber());
 
-        if (player.getNumbers(count).length == 9) {
-            System.out.println(player.getName() + " ran out of attempts");
-        }
-
-        if (player.getNumber(count) == hiddenNumber) {
+        if (player.getNumber() == hiddenNumber) {
             System.out.println("Win " + player.getName());
-            System.out.println("Player " + player.getName() + " guessed the number " + player.getNumber(count)
-                    + " with " + (count + 1) + " attempts");
-            count++;
-            result = true;
-        } else if (player.getNumber(count) < hiddenNumber) {
-            System.out.println(player.getName() + ": This number is less than what the computer guessed\n");
-        } else if (player.getNumber(count) > hiddenNumber) {
-            System.out.println(player.getName() + ": This number is greater than what the computer guessed\n");
+            System.out.println("Player " + player.getName() + " guessed the number " + player.getNumber() + " with "
+                    + (Player.count + 1) + " attempts");
+            Player.count++;
+            return true;
         }
-        return result;
+        System.out.println(player.getName() + ": This number is" + (player.getNumber() < hiddenNumber ? " less " :
+                " greater ") + "than the computer guessed\n");
+        return false;
     }
 
     private void printNumbers(Player player) {
         System.out.print(player.getName() + " entered: ");
-        for (int number : player.getNumbers(count)) {
+        for (int number : player.newLength()) {
             System.out.print(number + " ");
         }
+        System.out.println();
     }
 }
