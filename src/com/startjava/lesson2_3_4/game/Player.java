@@ -6,7 +6,7 @@ public class Player {
 
     private String name;
     private int[] numbers = new int[10];
-    public static int count;
+    private int count;
 
     public Player(String name) {
         this.name = name;
@@ -17,22 +17,24 @@ public class Player {
     }
 
     public int getNumber() {
-        return numbers[count];
+        return numbers[count - 1];
     }
 
     public void setNumber(int number) {
-        if (count == numbers.length - 1) {
-            System.out.println(getName() + " ran out of attempts");
-        }
         numbers[count] = number;
+        count++;
     }
 
-    public int[] newLength() {
+    public int[] getNumbers() {
         return Arrays.copyOf(numbers, count);
     }
 
-    public void toIndex() {
+    public void cleanNumbers() {
         Arrays.fill(numbers, 0, count, 0);
         count = 0;
+    }
+
+    public int getCount() {
+        return count;
     }
 }

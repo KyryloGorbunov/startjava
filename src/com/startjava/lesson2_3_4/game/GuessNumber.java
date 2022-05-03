@@ -20,42 +20,45 @@ public class GuessNumber {
             if (isGuessed(player1)) {
                 break;
             }
+            if (i == 9) {
+                System.out.println((player1.getName() + " ran out of attempts\n"));
+            }
             if (isGuessed(player2)) {
                 break;
             }
-            Player.count++;
+            if (i == 9) {
+                System.out.println((player2.getName() + " ran out of attempts\n"));
+            }
         }
         printNumbers(player1);
         printNumbers(player2);
     }
 
-    public void initGame() {
+    private void initGame() {
         hiddenNumber = (int) (Math.random() * 100 + 1);
-        player1.toIndex();
-        player2.toIndex();
+        player1.cleanNumbers();
+        player2.cleanNumbers();
     }
 
     private boolean isGuessed(Player player) {
         Scanner scanner = new Scanner(System.in);
         System.out.print(player.getName() + " enter the hidden number: ");
         player.setNumber(scanner.nextInt());
-        System.out.println(player.getNumber());
 
         if (player.getNumber() == hiddenNumber) {
             System.out.println("Win " + player.getName());
             System.out.println("Player " + player.getName() + " guessed the number " + player.getNumber() + " with "
-                    + (Player.count + 1) + " attempts");
-            Player.count++;
+                    + player.getCount() + " attempts");
             return true;
         }
-        System.out.println(player.getName() + ": This number is" + (player.getNumber() < hiddenNumber ? " less " :
-                " greater ") + "than the computer guessed\n");
+        String comparison = player.getNumber() < hiddenNumber ? " less " : " greater ";
+        System.out.println(player.getName() + ": This number is" + comparison + "than the computer guessed\n");
         return false;
     }
 
     private void printNumbers(Player player) {
         System.out.print(player.getName() + " entered: ");
-        for (int number : player.newLength()) {
+        for (int number : player.getNumbers()) {
             System.out.print(number + " ");
         }
         System.out.println();
