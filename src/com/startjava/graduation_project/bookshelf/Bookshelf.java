@@ -1,18 +1,17 @@
 package com.startjava.graduation_project.bookshelf;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Bookshelf {
     private int count;
     private Book[] books = new Book[10];
 
-    public void countBooks() {
-        System.out.println(count);
+    public int countBooks() {
+        return count;
     }
 
-    public void freePlace() {
-        System.out.println(books.length - count);
+    public int freePlace() {
+        return books.length - count;
     }
 
     public void getAll() {
@@ -34,13 +33,17 @@ public class Bookshelf {
         }
     }
 
-    public void getInfo(String name) {
+    public Book getInfo(String name) {
+        Book book = null;
         for (int i = 0; i < count; i++) {
             if (name.equals(books[i].getName())) {
-                System.out.println(books[i]);
+                book = books[i];
                 break;
+            } else {
+
             }
         }
+        return book;
     }
 
     public void delete(String name) {
@@ -48,7 +51,6 @@ public class Bookshelf {
         for (int i = 0; i < count; i++) {
             if (name.equals(books[i].getName())) {
                 index = i;
-                break;
             }
         }
         if (index >= 0) {
@@ -64,40 +66,4 @@ public class Bookshelf {
         count = 0;
     }
 
-    public void print(int answer) {
-        Scanner scanner = new Scanner(System.in);
-        switch (answer) {
-            case 1:
-                System.out.println("Enter <author>, <tittle>, <publishYear> for add book: ");
-                String[] addBook = scanner.nextLine().split(", ");
-                Book book = new Book(addBook[0], addBook[1], Integer.parseInt(addBook[2]));
-                add(book);
-                break;
-            case 2:
-                System.out.println("Enter <tittle> fot delete: ");
-                delete(scanner.nextLine());
-                break;
-            case 3:
-                System.out.println("Enter <tittle> fot info: ");
-                getInfo(scanner.nextLine());
-                break;
-            case 4:
-                System.out.print("Books in bookshelf: ");
-                countBooks();
-                break;
-            case 5:
-                System.out.print("Free place in bookshelf: ");
-                freePlace();
-                break;
-            case 6:
-                System.out.println("Bookshelf is clean");
-                clear();
-                break;
-            case 7:
-                getAll();
-                break;
-            default:
-                System.out.println("You enter wrong number");
-        }
-    }
 }
