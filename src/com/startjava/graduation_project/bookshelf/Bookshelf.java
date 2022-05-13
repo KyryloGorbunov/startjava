@@ -24,11 +24,11 @@ public class Bookshelf {
         }
     }
 
-    public void add(String book) {
-        String[] addBook = book.split(", ");
-        Book book1 = new Book(addBook[0], addBook[1], Integer.parseInt(addBook[2]));
+    public void add(String bookInfo) {
+        String[] bookData = bookInfo.split(", ");
+        Book book = new Book(bookData);
         if (count < books.length) {
-            books[count] = book1;
+            books[count] = book;
             count++;
         } else {
             System.out.println("Bookshelf is full");
@@ -45,17 +45,17 @@ public class Bookshelf {
     }
 
     public void delete(String name) {
-        Book[] copyOfBooks = new Book[books.length];
         int index = -1;
         for (int i = 0; i < count; i++) {
             if (name.equals(books[i].getName())) {
                 index = i;
             }
         }
-        System.arraycopy(books, 0, copyOfBooks, 0, index);
-        System.arraycopy(books, index + 1, copyOfBooks, index, books.length - (index + 1));
-        books = copyOfBooks;
-        count--;
+        if (index >= 0) {
+            System.arraycopy(books, 0, books, 0, index);
+            System.arraycopy(books, index + 1, books, index, books.length - (index + 1));
+            count--;
+        }
     }
 
     public void clear() {

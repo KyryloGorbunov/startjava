@@ -21,41 +21,38 @@ public class BookshelfMain {
                     "7. See bookshelf\n" +
                     "8. Exit");
             int answer = scanner.nextInt();
+            scanner.nextLine();
             if (answer == 8) {
                 break;
-            } else {
-                switch (answer) {
-                    case 1:
-                        System.out.println("Enter <author>, <tittle>, <publishYear> for add book: ");
-                        scanner.nextLine();
-                        bookshelf.add(scanner.nextLine());
-                        break;
-                    case 2:
-                        System.out.println("Enter <tittle> fot delete: ");
-                        scanner.nextLine();
-                        bookshelf.delete(scanner.nextLine());
-                        break;
-                    case 3:
-                        System.out.println("Enter <tittle> fot info: ");
-                        scanner.nextLine();
-                        System.out.println(bookshelf.getInfo(scanner.nextLine()));
-                        break;
-                    case 4:
-                        System.out.print("Books in bookshelf: " + bookshelf.getNumBooks() + "\n");
-                        break;
-                    case 5:
-                        System.out.print("Free place in bookshelf: " + bookshelf.getFreePlace() + "\n");
-                        break;
-                    case 6:
-                        bookshelf.clear();
-                        System.out.println("Bookshelf is clean");
-                        break;
-                    case 7:
-                        bookshelf.getAll();
-                        break;
-                    default:
-                        System.out.println("You enter wrong number");
-                }
+            }
+            switch (answer) {
+                case 1:
+                    System.out.println("Enter <author>, <tittle>, <publishYear> for add book: ");
+                    bookshelf.add(scanner.nextLine());
+                    break;
+                case 2:
+                    System.out.println("Enter <tittle> for delete: ");
+                    bookshelf.delete(scanner.nextLine());
+                    break;
+                case 3:
+                    System.out.println("Enter <tittle> for info: ");
+                    System.out.println(bookshelf.getInfo(scanner.nextLine()));
+                    break;
+                case 4:
+                    System.out.print("Books in bookshelf: " + bookshelf.getNumBooks() + "\n");
+                    break;
+                case 5:
+                    System.out.print("Free place in bookshelf: " + bookshelf.getFreePlace() + "\n");
+                    break;
+                case 6:
+                    bookshelf.clear();
+                    System.out.println("Bookshelf is clean");
+                    break;
+                case 7:
+                    bookshelf.getAll();
+                    break;
+                default:
+                    System.out.println("You enter wrong number");
             }
         }
     }
