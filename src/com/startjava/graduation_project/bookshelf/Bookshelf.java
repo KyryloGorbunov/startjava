@@ -52,7 +52,6 @@ public class Bookshelf {
             }
         }
         if (index >= 0) {
-            System.arraycopy(books, 0, books, 0, index);
             System.arraycopy(books, index + 1, books, index, books.length - (index + 1));
             count--;
         }
