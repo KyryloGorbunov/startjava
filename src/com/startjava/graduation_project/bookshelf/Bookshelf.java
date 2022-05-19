@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Bookshelf {
     private int count;
-    private Book[] books = new Book[10];
+    private final Book[] books = new Book[10];
 
     public int getNumBooks() {
         return count;
@@ -52,7 +52,7 @@ public class Bookshelf {
             }
         }
         if (index >= 0) {
-            System.arraycopy(books, index + 1, books, index, books.length - (index + 1));
+            System.arraycopy(books, index + 1, books, index, count);
             count--;
         }
     }
